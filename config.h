@@ -63,6 +63,7 @@ static const char* bldeccmd[] = { "backlight", "-" };
 static const char* blinccmd[] = { "backlight", "+" };
 
 static const char* gvimcmd[] = { "gvim", NULL };
+static const char* ffcmd[] = { "firefox", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -92,6 +93,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,             XK_F2,     spawn,          { .v = bldeccmd } },
   { MODKEY|ShiftMask,             XK_F3,     spawn,          { .v = blinccmd } },
   { MODKEY|ShiftMask,             XK_v,      spawn,          { .v = gvimcmd } },
+  { MODKEY|ShiftMask,             XK_f,      spawn,          { .v = ffcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
