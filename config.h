@@ -90,10 +90,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-  { MODKEY|ShiftMask,             XK_F2,     spawn,          { .v = bldeccmd } },
-  { MODKEY|ShiftMask,             XK_F3,     spawn,          { .v = blinccmd } },
   { MODKEY|ShiftMask,             XK_v,      spawn,          { .v = gvimcmd } },
   { MODKEY|ShiftMask,             XK_f,      spawn,          { .v = ffcmd } },
+  { NULL,                   0x1008ff03,      spawn,          { .v = bldeccmd } },
+  { NULL,                   0x1008ff02,      spawn,          { .v = blinccmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
