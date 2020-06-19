@@ -66,8 +66,18 @@ static const char *termcmd[]  = { "stterm", NULL };
 static const char* bldeccmd[] = { "backlight", "-" };
 static const char* blinccmd[] = { "backlight", "+" };
 
+static const char* mutecmd[] = { "volume", "m" };
+static const char* voldowncmd[] = { "volume", "-" };
+static const char* volupcmd[] = { "volume", "+" };
+
 static const char* gvimcmd[] = { "gvim", NULL };
 static const char* ffcmd[] = { "firefox", NULL };
+
+#define K_LCDDOWN 0x1008ff03
+#define K_LCDUP   0x1008ff02
+#define K_MUTE    0x1008ff12
+#define K_VOLDOWN 0x1008ff11
+#define K_VOLUP   0x1008ff13
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -96,8 +106,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
   { MODKEY|ShiftMask,             XK_v,      spawn,          { .v = gvimcmd } },
   { MODKEY|ShiftMask,             XK_f,      spawn,          { .v = ffcmd } },
-  { NULL,                   0x1008ff03,      spawn,          { .v = bldeccmd } },
-  { NULL,                   0x1008ff02,      spawn,          { .v = blinccmd } },
+  { NULL,                         K_LCDDOWN, spawn,          { .v = bldeccmd } },
+  { NULL,                         K_LCDUP,   spawn,          { .v = blinccmd } },
+  { NULL,                         K_MUTE,    spawn,          { .v = mutecmd } },
+  { NULL,                         K_VOLDOWN, spawn,          { .v = voldowncmd } },
+  { NULL,                         K_VOLUP,   spawn,          { .v = volupcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
