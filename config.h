@@ -72,6 +72,8 @@ static const char* volupcmd[] = { "volume", "+" };
 
 static const char* vimcmd[] = { "stterm", "-e", "vim", NULL };
 static const char* ffcmd[] = { "firefox", NULL };
+static const char* muttcmd[] = {"stterm", "-e", "neomutt", NULL };
+static const char* newsboatcmd[] = {"stterm", "-e", "newsboat", NULL };
 
 #define K_LCDDOWN 0x1008ff03
 #define K_LCDUP   0x1008ff02
@@ -104,8 +106,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-  { MODKEY|ShiftMask,             XK_v,      spawn,          { .v = vimcmd } },
   { MODKEY|ShiftMask,             XK_f,      spawn,          { .v = ffcmd } },
+  { MODKEY|ShiftMask,             XK_m,      spawn,          { .v = muttcmd } },
+  { MODKEY|ShiftMask,             XK_n,      spawn,          { .v = newsboatcmd } },
+  { MODKEY|ShiftMask,             XK_v,      spawn,          { .v = vimcmd } },
   { NULL,                         K_LCDDOWN, spawn,          { .v = bldeccmd } },
   { NULL,                         K_LCDUP,   spawn,          { .v = blinccmd } },
   { NULL,                         K_MUTE,    spawn,          { .v = mutecmd } },
