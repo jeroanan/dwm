@@ -15,7 +15,9 @@ static const char col_cyan[]        = "#005577";
 
 static const char col_white[]       = "#ffffff";
 static const char col_blue[]        = "#114488";
-static const char col_purple[]      = "#120010";
+//static const char col_purple[]      = "#120010";
+static const char col_purple[]      = "#6b128c";
+
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -62,7 +64,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "stterm", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 static const char* bldeccmd[] = { "backlight", "-" };
 static const char* blinccmd[] = { "backlight", "+" };
@@ -72,7 +74,7 @@ static const char* voldowncmd[] = { "volume", "-" };
 static const char* volupcmd[] = { "volume", "+" };
 
 static const char* vimcmd[] = { "stterm", "-e", "vim", NULL };
-static const char* ffcmd[] = { "firefox", NULL };
+static const char* ffcmd[] = { "vivaldi-stable", NULL };
 static const char* muttcmd[] = {"stterm", "-e", "neomutt", NULL };
 static const char* newsboatcmd[] = {"stterm", "-e", "newsboat", NULL };
 static const char* emacscmd[] = {"emacsclient", "-c", NULL};
